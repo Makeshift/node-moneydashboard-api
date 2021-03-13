@@ -15,6 +15,9 @@ node-moneydashboard-api is a Node module for accessing the MoneyDashboard API.
 
 * [MoneyDashboard](#MoneyDashboard)
     * [new MoneyDashboard(opts)](#new_MoneyDashboard_new)
+    * [.login()](#MoneyDashboard+login) ⇒ <code>Promise.&lt;Boolean&gt;</code>
+    * [.refreshLogin()](#MoneyDashboard+refreshLogin) ⇒ <code>Promise.&lt;(Boolean\|Error)&gt;</code>
+    * [.generateAPIAuth()](#MoneyDashboard+generateAPIAuth) ⇒ <code>String</code>
     * [.getAccounts()](#MoneyDashboard+getAccounts) ⇒ <code>Array.&lt;Object&gt;</code>
     * [.getBalances()](#MoneyDashboard+getBalances)
 
@@ -30,6 +33,27 @@ Creates a new instance of the MoneyDashboard API
 | opts.username | <code>String</code> | Your MoneyDashboard username/email |
 | opts.password | <code>String</code> | Your MoneyDashboard password |
 
+<a name="MoneyDashboard+login"></a>
+
+### moneyDashboard.login() ⇒ <code>Promise.&lt;Boolean&gt;</code>
+Logs in using the provided credentials
+
+**Kind**: instance method of [<code>MoneyDashboard</code>](#MoneyDashboard)  
+**Returns**: <code>Promise.&lt;Boolean&gt;</code> - A promise that (when resolved) is a boolean dictating the status of logging in  
+<a name="MoneyDashboard+refreshLogin"></a>
+
+### moneyDashboard.refreshLogin() ⇒ <code>Promise.&lt;(Boolean\|Error)&gt;</code>
+Refreshes local credentials for Cognito
+
+**Kind**: instance method of [<code>MoneyDashboard</code>](#MoneyDashboard)  
+**Returns**: <code>Promise.&lt;(Boolean\|Error)&gt;</code> - A promise that (when resolved) is a boolean dictating the status of logging in  
+<a name="MoneyDashboard+generateAPIAuth"></a>
+
+### moneyDashboard.generateAPIAuth() ⇒ <code>String</code>
+Generates the x-auth header required for API requests
+
+**Kind**: instance method of [<code>MoneyDashboard</code>](#MoneyDashboard)  
+**Returns**: <code>String</code> - x-auth header string  
 <a name="MoneyDashboard+getAccounts"></a>
 
 ### moneyDashboard.getAccounts() ⇒ <code>Array.&lt;Object&gt;</code>

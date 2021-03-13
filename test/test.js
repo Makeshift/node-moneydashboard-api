@@ -1,3 +1,4 @@
+/* eslint-env mocha */
 const MoneyDashboard = require('../lib');
 
 const chai = require('chai');
@@ -8,16 +9,20 @@ const defaultOpts = {
   password: process.env.MoneyDashboardPassword
 };
 
-describe('MoneyDashboard', function () {
-  describe('login', function () {
-    it('should be able to log in using the given credentials');
+describe('MoneyDashboard', () => {
+  describe('login', () => {
+    const account = new MoneyDashboard(defaultOpts);
+
+    it('should be able to log in using the given credentials', () => {
+      return account.login().should.eventually.be.true;
+    });
 
     it('should return a boolean indictating success');
 
     it('should handle incorrect logins');
   });
 
-  describe('getAccounts', function () {
+  describe('getAccounts', () => {
     it('should return an array of accounts');
 
     it('should handle not having any accounts');
