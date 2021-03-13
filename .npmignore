@@ -1,0 +1,11 @@
+.releaserc
+.circleci
+.vscode
+node_modules
+README.md
+.git
+.gitignore
+.pre-commit-config.yaml
+.jshintrc
+.prettierrc
+.mdlrc
